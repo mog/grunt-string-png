@@ -22,13 +22,10 @@ module.exports = function(grunt) {
             dst = fs.createWriteStream(destURL),
             png = new PNG({
                 height: 1,
-                width: src.length
-                //deflateLevel:0,
-                //deflateStrategy:0,
-                //filterType:-1
+                width: src.length + 1
             });
 
-        for(var i = 0, c = 0; i < src.length * 4; i+=4, c++){
+        for(var i = 0, c = 0; i < (src.length + 1) * 4; i+=4, c++){
 
            var char = src.charCodeAt(c);
             png.data[i] = char;
